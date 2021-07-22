@@ -1,4 +1,4 @@
-<p [innerHTML]="title" ></p>
+<!--<p [innerHTML]="title" ></p>-->
 
 <!--<h3> {{ year }} </h3>
 
@@ -24,7 +24,119 @@
 </ul>-->
 
 
-
+<!--
 <button [disabled]=" ! canClick " >
 {{btnTXT}} <span *ngIf="countDown != 0">({{countDown}})s</span> 
-</button>
+</button>-->
+
+<!--
+
+<form [formGroup]="userform" (ngSubmit)="saveUser()" >
+    
+
+    <section formGroupName="personalInfo"  >
+        <label for="">Userame  </label> <br>
+
+        <input formControlName="username" type="text" ><br>
+    
+        <label for="">Email  </label> <br>
+    
+        <input formControlName="email" type="text" ><br>
+    
+        <label for="">Password  </label> <br>
+    
+        <input formControlName="password" type="password" ><br>
+    
+    </section>
+
+
+    <section formGroupName="address"  >
+        <label for="">City   </label> <br>
+
+        <input formControlName="city" type="text" ><br>
+    
+        <label for="">Zip code   </label> <br>
+    
+        <input formControlName="zipCode" type="text" ><br>
+    
+        <label for="">Satet    </label> <br>
+    
+        <input formControlName="state" type="password" ><br>
+    
+    </section>
+    
+
+    <button [disabled]=" ! userform.valid " type="submit">Check</button>
+</form>-->
+<!--
+<h3>List of users:</h3>
+<ul>
+    <li *ngFor="let u of users">
+        <p>
+            <strong>{{u.username}}</strong><br>
+            {{u.email}}
+        </p>
+        <button (click)="deleteUser(u.id)" >delete</button>
+    </li>
+</ul>-->
+
+
+
+
+<!-- stepper -->
+
+
+
+<!--
+      formOne = new FormGroup({
+    username : new FormControl()
+  })
+
+  
+  formTwo = new FormGroup({
+    address : new FormControl(),
+    phone : new FormControl()
+    
+  })
+
+
+  formThree= new FormGroup({
+    email : new FormControl(),
+    password : new FormControl()
+    
+  })
+
+-->
+
+
+<form [formGroup]="formOne" *ngIf=" steps == 0 " >
+    <label for="">Userame  </label> <br>
+
+    <input formControlName="username" type="text" ><br>
+</form>
+
+
+<form [formGroup]="formTwo" *ngIf=" steps == 1 " >
+    <label for="">address  </label> <br>
+
+    <input formControlName="address" type="text" ><br>
+    <label for="">phone  </label> <br>
+
+    <input formControlName="phone" type="text" ><br>
+    
+</form>
+
+
+<form [formGroup]="formThree" *ngIf=" steps == 2 " >
+    <label for="">email  </label> <br>
+
+    <input formControlName="email" type="text" ><br>
+    <label for="">password  </label> <br>
+
+    <input formControlName="password" type="text" ><br>
+    
+</form>
+
+<button (click)="next()" *ngIf=" steps != 2 " >NEXT</button>
+<button (click)="validate()" *ngIf=" steps == 2 " >submit</button>
+
