@@ -85,7 +85,7 @@ export class AppComponent {
   }*/
 
 
-
+/*
   formOne = new FormGroup({
     username : new FormControl()
   })
@@ -104,8 +104,22 @@ export class AppComponent {
     
   })
 
-  steps = 0;
+  steps = 0;*/
 
+
+
+
+
+  date = new Date();
+  welcomeMes ="hello world";
+
+  contacts = [
+    { title:'chourabi taher', email:'tchourabi@gmail', phone:"12121212" },
+    { title:'nather zhioua', email:'nather@gmail.com', phone:"12121212"  },
+    { title:'omar chakroun', email:'omar@gmail.com', phone:"12121212"  },
+    
+    
+  ]
   
 
 
@@ -133,6 +147,8 @@ export class AppComponent {
   }
 
 
+  /*
+
   next(){
     this.steps++;
   }
@@ -147,6 +163,9 @@ export class AppComponent {
 
     console.log(val);
     
-  }
+  }*/
+
+  
+ 
 
 }

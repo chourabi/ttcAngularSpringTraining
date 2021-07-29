@@ -108,7 +108,7 @@
 
 -->
 
-
+<!--
 <form [formGroup]="formOne" *ngIf=" steps == 0 " >
     <label for="">Userame  </label> <br>
 
@@ -138,5 +138,45 @@
 </form>
 
 <button (click)="next()" *ngIf=" steps != 2 " >NEXT</button>
-<button (click)="validate()" *ngIf=" steps == 2 " >submit</button>
+<button (click)="validate()" *ngIf=" steps == 2 " >submit</button>-->
 
+
+
+
+
+
+<!--
+    <h1>{{date | date:'medium' }}</h1>
+
+<h1  > {{welcomeMes | uppercase }} </h1>
+<h1  > {{ 'THIS IS AN UPPER CASE STRING'  | lowercase }} </h1>
+
+<h1  > {{ 'this is a title' | titlecase }} </h1>
+
+<h3> Total : {{ 580.69 | currency:'TND' }} </h3>
+ 
+
+<h3> {{ 'test@test.tn' | hideemail }} </h3>
+-->
+
+
+
+<!--*******************************compo***********************************-->
+<!--
+
+<app-navbar></app-navbar>
+ 
+ 
+
+<div class="container">
+    <h3> List of contacts:</h3>
+
+    <ul class="list-group">
+        <app-contact-item *ngFor="let c of contacts" [contact]="c" ></app-contact-item> 
+    </ul>
+ 
+</div>-->
+
+
+<!--********************Routing**********************-->
+<router-outlet></router-outlet>
