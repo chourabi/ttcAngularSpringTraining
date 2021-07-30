@@ -10,6 +10,9 @@ import { ContactItemComponent } from './contact-item/contact-item.component';
 import { PageOneComponent } from './page-one/page-one.component';
 import { PageTwoComponent } from './page-two/page-two.component';
 import { PageThreeComponent } from './page-three/page-three.component';
+import { CalculatorHomeComponent } from './calculator-home/calculator-home.component';
+import { CalculatorTableComponent } from './calculator-table/calculator-table.component';
+import { CalculatorTotalComponent } from './calculator-total/calculator-total.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { PageThreeComponent } from './page-three/page-three.component';
     ContactItemComponent,
     PageOneComponent,
     PageTwoComponent,
-    PageThreeComponent
+    PageThreeComponent,
+    CalculatorHomeComponent,
+    CalculatorTableComponent,
+    CalculatorTotalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CalculatorService } from '../calculator.service';
 
 @Component({
   selector: 'app-page-three',
@@ -9,10 +10,39 @@ import { ActivatedRoute } from '@angular/router';
 export class PageThreeComponent implements OnInit {
 
   final;
-  constructor(private route:ActivatedRoute) { }
+  transaction ;
+  constructor(private route:ActivatedRoute, private calculator:CalculatorService,private router:Router) { }
 
   ngOnInit(): void {
-    this.final = this.route.snapshot.params.number;
+ 
+    
+    let t = {
+      id:null,
+      oldAmount: this.route.snapshot.params.oldAmount,
+      bills: this.route.snapshot.params.bills,
+      result:0
+    };
+
+    
+
+
+    // operation 
+    t.result = (Number.parseInt(t.oldAmount) - Number.parseInt(t.bills));
+
+    this.final = t.result;
+    
+    this.transaction = t;
+    
+
+
+
+
   }
 
+
+  save(){
+    this.calculator.addNewTransaction(this.transaction);
+    this.router.navigateByUrl('/home');
+    
+  }
 }

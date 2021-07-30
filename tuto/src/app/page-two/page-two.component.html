@@ -19,7 +19,7 @@
                     <input formControlName="ammount" type="number" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <button [disabled]=" ! ammountForm.valid " class="btn btn-primary mt-3"    [routerLink]="'/three/'+operation()"  >NEXT</button>
+                    <button [disabled]=" ! ammountForm.valid " class="btn btn-primary mt-3"  (click)="goToThirdPage()" >NEXT</button>
                 </div>
             </form>
 

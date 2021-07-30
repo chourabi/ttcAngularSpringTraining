@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-two',
@@ -15,7 +15,7 @@ export class PageTwoComponent implements OnInit {
     ammount: new FormControl('',Validators.required)
   })
 
-  constructor( private route:ActivatedRoute ) { }
+  constructor( private route:ActivatedRoute, private router:Router ) { }
 
   ngOnInit(): void { 
     this.amount = this.route.snapshot.params.number;
@@ -26,13 +26,23 @@ export class PageTwoComponent implements OnInit {
     
   }
 
-  operation(){
+  goToThirdPage(){
 
     let oldAmount = Number.parseInt(this.amount);
     let bills = Number.parseInt(this.ammountForm.value.ammount);
     
 
-    return (oldAmount-bills);
+    const transaction = {
+      oldAmount : oldAmount,
+      bills:bills
+    }
+
+    this.router.navigate(['/three',transaction])
+    
+
+     
   }
+
+ 
 
 }
