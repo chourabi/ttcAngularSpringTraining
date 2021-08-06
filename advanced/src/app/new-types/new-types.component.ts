@@ -23,7 +23,7 @@ export class NewTypesComponent implements OnInit {
       
     })
 
-    watch.unsubscribe();
+    //watch.unsubscribe();
  
   }
 
