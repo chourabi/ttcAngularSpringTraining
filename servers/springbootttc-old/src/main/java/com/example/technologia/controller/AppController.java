@@ -4,22 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.technologia.models.AddProductModel;
 import com.example.technologia.models.Client;
 
 @RestController
 @RequestMapping("/app")
 public class AppController {
 	
-	// the client is requesting data !!!
 	
-	/*@GetMapping("/clients")
+	@GetMapping("/clients")
 	public String helloWorld( @RequestParam( required = false ) String dep,@RequestParam(required = false) String year ) {
 		
 		if( (dep != null ) ) {
@@ -59,24 +55,7 @@ public class AppController {
 		 
 		 return clients;
 		 
-	}*/
-	
-	
-	// the client is sending data to the server
-	
-	@PostMapping("/add-product")
-	public void addNewProduct( @RequestBody() AddProductModel request ) {
-		// use the data came from the postman 
-		
-		System.out.println("the title sent from the post man => ".concat(request.getTitle()));
-		
-		// we will use the getter model !! > to create a new entity
-		
 	}
-	
-	
-	
-	
 	
 
 }
